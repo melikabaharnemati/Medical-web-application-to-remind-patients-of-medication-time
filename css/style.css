@@ -1,0 +1,48 @@
+body {
+    direction: rtl;
+    font-family: "b yekan";
+    text-align: center;
+    padding: 50px;
+    background-color: #f4f4f4;
+}
+h1 {
+        color: #e48796;
+        border-bottom: 1.5px dashed gray;
+}
+p {
+    text-align: justify;
+}
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.image-placeholder {
+    width: 100%;
+    height: 300px;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+.buttons button {
+    font-family: "b titr";
+    padding: 5px 40px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.login {
+    background: #28a745;
+    color: white;
+}
+.signup {
+    background: #007bff;
+    color: white;
+}
