@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>داشبورد داروها</title>
+</head>
+<body>
+
+    <div class="container">
+        <h1>داشبورد داروها</h1>
+
+        <div class="dashboard">
+            <button class="add-drug-btn">افزودن دارو جدید</button>
+            
+            <table class="drug-table">
+                <thead>
+                    <tr>
+                        <th>نام دارو</th>
+                        <th>دوره مصرف</th>
+                        <th>زمان مصرف</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>پاراستامول</td>
+                        <td>هر 8 ساعت</td>
+                        <td>08:00 - 16:00 - 00:00</td>
+                    </tr>
+                    <tr>
+                        <td>آنتی‌بیوتیک</td>
+                        <td>هر 12 ساعت</td>
+                        <td>09:00 - 21:00</td>
+                    </tr>
+                    <tr>
+                        <td>آسپرین</td>
+                        <td>هر 6 ساعت</td>
+                        <td>10:00 - 16:00 - 22:00</td>
+                    </tr>
+                    <!-- اگر دارویی اضافه شود، اینجا قرار می‌گیرد -->
+                </tbody>
+            </table>
+
+            <!-- پیام در صورتی که دارویی ثبت نشده باشد -->
+            <div class="no-drugs" id="no-drugs-msg">
+                در حال حاضر دارویی ثبت نشده است.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // برای نمایش پیام "دارویی ثبت نشده" اگر هیچ دارویی در جدول نباشد
+        const drugTable = document.querySelector('.drug-table tbody');
+        const noDrugsMsg = document.getElementById('no-drugs-msg');
+        
+        if (drugTable.rows.length === 0) {
+            noDrugsMsg.style.display = 'block';
+        } else {
+            noDrugsMsg.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

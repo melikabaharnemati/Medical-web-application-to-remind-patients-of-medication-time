@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>صفحه ورود و عضویت</title>
+</head>
+<body>
+
+    <div class="container">
+        <div id="login-form" class="form-container active">
+            <h1>ورود</h1>
+            <form>
+                <div class="form-group">
+                    <label for="login-username">نام کاربری</label>
+                    <input type="text" id="login-username" placeholder="نام کاربری">
+                </div>
+                <div class="form-group">
+                    <label for="login-password">رمز عبور</label>
+                    <input type="password" id="login-password" placeholder="رمز عبور">
+                </div>
+                <button type="submit">ورود</button>
+            </form>
+            <div class="switch-form">
+                <p>حساب کاربری ندارید؟ <a href="#" onclick="switchToSignup()">ثبت‌نام کنید</a></p>
+            </div>
+        </div>
+
+        <div id="signup-form" class="form-container">
+            <h1>ثبت‌نام</h1>
+            <form>
+                <div class="form-group">
+                    <label for="signup-name">نام</label>
+                    <input type="text" id="signup-name" placeholder="نام">
+                </div>
+                <div class="form-group">
+                    <label for="signup-lastname">نام‌خانوادگی</label>
+                    <input type="text" id="signup-lastname" placeholder="نام">
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">ایمیل</label>
+                    <input type="email" id="signup-email" placeholder="ایمیل">
+                </div>
+                <div class="form-group">
+                    <label for="signup-username">نام کاربری</label>
+                    <input type="text" id="signup-username" placeholder="نام کاربری">
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">رمز عبور</label>
+                    <input type="password" id="signup-password" placeholder="رمز عبور">
+                </div>
+                <button type="submit">ثبت‌نام</button>
+            </form>
+            <div class="switch-form">
+                <p>حساب کاربری دارید؟ <a href="#" onclick="switchToLogin()">ورود</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchToSignup() {
+            document.getElementById('login-form').classList.remove('active');
+            document.getElementById('signup-form').classList.add('active');
+        }
+
+        function switchToLogin() {
+            document.getElementById('signup-form').classList.remove('active');
+            document.getElementById('login-form').classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
