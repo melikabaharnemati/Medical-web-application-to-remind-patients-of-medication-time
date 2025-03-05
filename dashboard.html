@@ -10,55 +10,53 @@
 
     <div class="container">
         <h1>داشبورد داروها</h1>
+        <h2 style="text-align: right;font-weight: 500;font-size: 16px;"><span id="user-name"></span> خوش آمدید </h2>
 
         <div class="dashboard">
-            <button class="add-drug-btn">افزودن دارو جدید</button>
+            <button class="add-drug-btn" onclick="openPopup()">افزودن دارو جدید</button>
             
             <table class="drug-table">
                 <thead>
                     <tr>
                         <th>نام دارو</th>
-                        <th>دوره مصرف</th>
-                        <th>زمان مصرف</th>
+                        <th>دوز مصرفی</th>
+                        <th>زمان بندی</th>
+                        <th>دستورالعمل پزشک</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>پاراستامول</td>
-                        <td>هر 8 ساعت</td>
-                        <td>08:00 - 16:00 - 00:00</td>
-                    </tr>
-                    <tr>
-                        <td>آنتی‌بیوتیک</td>
-                        <td>هر 12 ساعت</td>
-                        <td>09:00 - 21:00</td>
-                    </tr>
-                    <tr>
-                        <td>آسپرین</td>
-                        <td>هر 6 ساعت</td>
-                        <td>10:00 - 16:00 - 22:00</td>
-                    </tr>
-                    <!-- اگر دارویی اضافه شود، اینجا قرار می‌گیرد -->
+                <tbody id="drug-list">
                 </tbody>
             </table>
 
-            <!-- پیام در صورتی که دارویی ثبت نشده باشد -->
             <div class="no-drugs" id="no-drugs-msg">
                 در حال حاضر دارویی ثبت نشده است.
             </div>
         </div>
     </div>
 
-    <script>
-        // برای نمایش پیام "دارویی ثبت نشده" اگر هیچ دارویی در جدول نباشد
-        const drugTable = document.querySelector('.drug-table tbody');
-        const noDrugsMsg = document.getElementById('no-drugs-msg');
-        
-        if (drugTable.rows.length === 0) {
-            noDrugsMsg.style.display = 'block';
-        } else {
-            noDrugsMsg.style.display = 'none';
-        }
-    </script>
+    <div id="drug-popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2>افزودن دارو</h2>
+            <form id="drug-form">
+                <label for="drug-name">نام دارو:</label>
+                <input type="text" id="drug-name" required>
+                
+                <label for="drug-dose">دوز مصرفی:</label>
+                <input type="text" id="drug-dose" required>
+                
+                <label for="drug-schedule">زمان بندی:</label>
+                <input type="text" id="drug-schedule" required>
+                
+                <label for="drug-instruction">دستورالعمل پزشک:</label>
+                <textarea id="drug-instruction" required></textarea>
+                
+                <button type="submit">افزودن</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+    
 </body>
 </html>
